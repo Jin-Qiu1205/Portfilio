@@ -360,20 +360,22 @@ body{
   line-height: 1.7;
 }
 
-.card-tags{
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 10px;
-}
+/* ✅ Project tech tags = rose red theme */
 .card-tags span{
   font-size: 12px;
-  color: var(--muted);
-  border: 1px solid var(--line);
+  font-weight: 600;
+  color: var(--accent);                 /* 文字变红 */
+  border: 1px solid rgba(155, 58, 87, 0.45); /* 红色描边 */
   padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.02);
+  background: rgba(155, 58, 87, 0.08);  /* 微红底，更协调 */
 }
+
+.card-tags span:hover{
+  background: rgba(155, 58, 87, 0.14);
+  border-color: rgba(155, 58, 87, 0.65);
+}
+
 
 .card-links{
   display: flex;
