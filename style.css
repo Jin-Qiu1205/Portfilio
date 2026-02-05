@@ -1,0 +1,460 @@
+/* style.css */
+:root{
+  --bg: #0b0f14;
+
+  /* 深玫瑰红主题（稳重版） */
+  --accent: #9b3a57;     /* 主玫瑰红（按钮 / 下划线 / 圆环） */
+  --accent-2: #7f2e47;   /* hover 深一点 */
+  --accent-soft: rgba(155, 58, 87, 0.18); /* 轻描边 / glow */
+
+  --text: rgba(255,255,255,0.90);
+  --muted: rgba(255,255,255,0.62);
+  --line: rgba(255,255,255,0.10);
+
+  --shadow: 0 14px 50px rgba(0,0,0,0.35);
+  --radius: 18px;
+}
+
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+body{
+  margin: 0;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 600px at 70% 20%, rgba(46,230,214,0.08), transparent 60%),
+              radial-gradient(900px 500px at 20% 70%, rgba(46,230,214,0.06), transparent 55%),
+              var(--bg);
+  color: var(--text);
+}
+
+.container{
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(11,15,20,0.70);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner{
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo{
+  font-family: "Great Vibes", cursive;
+  font-size: 34px;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.logo:hover{
+  color: var(--accent);
+  background: rgba(46,230,214,0.08);
+}
+
+.nav{
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+.nav-link{
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 10px 12px;
+  border-radius: 12px;
+  transition: 180ms ease;
+  position: relative;
+}
+.nav-link:hover{
+  color: var(--accent);
+  background: rgba(46,230,214,0.08);
+}
+.nav-link.active{
+  color: var(--text);
+}
+.nav-link.active::after{
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 6px;
+  height: 2px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  opacity: 0.9;
+}
+
+.hero{
+  padding: 56px 0 28px;
+}
+
+.hero-grid{
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 48px;
+  align-items: center;
+  min-height: calc(100vh - 74px);
+}
+
+.left{
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 22px;
+  align-items: center;
+}
+
+.social{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.social-btn{
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  color: var(--muted);
+  text-decoration: none;
+  background: rgba(255,255,255,0.03);
+  transition: 180ms ease;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.22);
+  font-weight: 600;
+}
+.social-btn:hover{
+  color: var(--bg);
+  border-color: rgba(46,230,214,0.45);
+  background: var(--accent);
+  transform: translateY(-1px);
+}
+
+.avatar-wrap{
+  position: relative;
+  width: min(360px, 84vw);
+  aspect-ratio: 1/1;
+  margin-left: 8px;
+}
+
+.avatar-ring{
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  border: 2.5px solid rgba(155, 58, 87, 0.55);
+  box-shadow:
+    0 0 0 6px rgba(155, 58, 87, 0.12),
+    inset 0 0 0 1px rgba(255,255,255,0.06);
+}
+
+.avatar{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 10px solid rgba(255,255,255,0.05);
+  box-shadow: var(--shadow);
+  display: block;
+}
+
+.right{
+  max-width: 560px;
+}
+
+.kicker{
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+
+.headline{
+  margin: 0 0 10px;
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: 0.2px;
+}
+
+.subtitle{
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+.subtitle strong{
+  color: rgba(255,255,255,0.86);
+  font-weight: 600;
+}
+
+.cta-row{
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 180ms ease;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn-primary{
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(155, 58, 87, 0.25);
+}
+
+.btn-primary:hover{
+  background: var(--accent-2);
+  transform: translateY(-1px);
+}
+
+.btn-ghost{
+  background: rgba(155, 58, 87, 0.08);
+  border: 1px solid rgba(155, 58, 87, 0.45);
+  color: rgba(255,255,255,0.88);
+}
+
+.btn-ghost:hover{
+  background: rgba(155, 58, 87, 0.14);
+  border-color: rgba(155, 58, 87, 0.65);
+  color: rgba(255,255,255,0.92);
+}
+
+/* ✅ 去掉点击后那种“亮色焦点框/变色” */
+.btn:focus,
+.btn:focus-visible{
+  outline: none;
+  box-shadow: none;
+}
+
+/* ===== Hero Skills (between subtitle and buttons) ===== */
+
+.skills-block{
+  margin-top: 10px;
+  margin-bottom: 18px;
+}
+
+.skills-title{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: rgba(255,255,255,0.86);
+}
+
+.skills-title .skills-icon{
+  opacity: 0.95;
+}
+
+.skills-pills{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ✅ 只给 Skills 区域的 pill 上玫瑰红（避免被下面的 .pill 覆盖） */
+/* ✅ Skills pills = same solid red as View Resume */
+.skills-pills .pill{
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+
+  background: var(--accent);   /* 和 View Resume 一样 */
+  color: #fff;
+  border: 1px solid transparent;
+
+  box-shadow: 0 10px 24px rgba(155, 58, 87, 0.25); /* 和 btn-primary 同风格 */
+}
+
+.skills-pills .pill:hover{
+  background: var(--accent-2); /* hover 更深红，和按钮一致 */
+  transform: translateY(-1px);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+
+/* ===== Generic pills (used elsewhere if needed) ===== */
+.meta{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* 通用 pill（不会影响 Skills，因为 Skills 用 .skills-pills .pill 更具体） */
+.pill{
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.03);
+  color: var(--muted);
+}
+
+.section{
+  padding: 64px 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-title{
+  margin: 0 0 10px;
+  font-size: 26px;
+}
+
+.section-text{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 850px;
+}
+
+.cards{
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card{
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.03);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+  transition: 180ms ease;
+}
+.card:hover{
+  border-color: rgba(46,230,214,0.35);
+  transform: translateY(-2px);
+  background: rgba(46,230,214,0.06);
+}
+.card h3{
+  margin: 0 0 10px;
+}
+.card p{
+  margin: 0 0 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.card-tags{
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.card-tags span{
+  font-size: 12px;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.02);
+}
+
+.card-links{
+  display: flex;
+  gap: 14px;
+}
+.link{
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.link:hover{
+  color: rgba(46,230,214,0.80);
+  text-decoration: underline;
+}
+
+.contact-item{
+  margin: 6px 0;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.contact-item .label{
+  margin-right: 6px;
+}
+
+.contact-item .value{
+  font-weight: 500;
+}
+
+/* 电话玫瑰红 */
+.contact-item .phone{
+  color: var(--accent);
+}
+
+/* 邮箱保持中性（或你也可以同色） */
+.contact-item .email{
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+}
+
+.contact-item .email:hover{
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.footer{
+  border-top: 1px solid var(--line);
+  padding: 20px 0;
+  color: var(--muted);
+}
+.footer-inner{
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 920px){
+  .hero-grid{
+    grid-template-columns: 1fr;
+    gap: 28px;
+    min-height: auto;
+    padding-top: 18px;
+  }
+  .left{
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .social{
+    flex-direction: row;
+  }
+  .avatar-wrap{
+    width: min(320px, 80vw);
+    margin-left: 0;
+  }
+  .cards{
+    grid-template-columns: 1fr;
+  }
+  .nav{
+    gap: 10px;
+  }
+  .nav-link{
+    padding: 10px 10px;
+  }
+}
