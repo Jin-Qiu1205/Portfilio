@@ -361,9 +361,17 @@ body{
 }
 
 /* ✅ Project tech tags = rose red theme */
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;        /* ⭐ 允许自动换行 */
+  gap: 8px 10px;          /* ⭐ 行间距 + 列间距 */
+  margin-top: 10px;
+}
+
 .card-tags span{
   font-size: 12px;
   font-weight: 600;
+  max-width: 90%;
   color: var(--accent);                 /* 文字变红 */
   border: 1px solid rgba(155, 58, 87, 0.45); /* 红色描边 */
   padding: 6px 10px;
