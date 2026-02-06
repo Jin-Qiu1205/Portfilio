@@ -2,10 +2,10 @@
 :root{
   --bg: #0b0f14;
 
-  /* 深玫瑰红主题（稳重版） */
-  --accent: #9b3a57;     /* 主玫瑰红（按钮 / 下划线 / 圆环） */
-  --accent-2: #7f2e47;   /* hover 深一点 */
-  --accent-soft: rgba(155, 58, 87, 0.18); /* 轻描边 / glow */
+ 
+  --accent: #9b3a57;     
+  --accent-2: #7f2e47;  
+  --accent-soft: rgba(155, 58, 87, 0.18); 
 
   --text: rgba(255,255,255,0.90);
   --muted: rgba(255,255,255,0.62);
@@ -239,7 +239,7 @@ body{
   color: rgba(255,255,255,0.92);
 }
 
-/* ✅ 去掉点击后那种“亮色焦点框/变色” */
+
 .btn:focus,
 .btn:focus-visible{
   outline: none;
@@ -273,8 +273,8 @@ body{
   gap: 10px;
 }
 
-/* ✅ 只给 Skills 区域的 pill 上玫瑰红（避免被下面的 .pill 覆盖） */
-/* ✅ Skills pills = same solid red as View Resume */
+
+/*  Skills pills = same solid red as View Resume */
 .skills-pills .pill{
   display: inline-flex;
   align-items: center;
@@ -283,15 +283,15 @@ body{
   font-size: 13px;
   font-weight: 600;
 
-  background: var(--accent);   /* 和 View Resume 一样 */
+  background: var(--accent);  
   color: #fff;
   border: 1px solid transparent;
 
-  box-shadow: 0 10px 24px rgba(155, 58, 87, 0.25); /* 和 btn-primary 同风格 */
+  box-shadow: 0 10px 24px rgba(155, 58, 87, 0.25); 
 }
 
 .skills-pills .pill:hover{
-  background: var(--accent-2); /* hover 更深红，和按钮一致 */
+  background: var(--accent-2); 
   transform: translateY(-1px);
   transition: transform 0.15s ease, background 0.15s ease;
 }
@@ -304,7 +304,7 @@ body{
   flex-wrap: wrap;
 }
 
-/* 通用 pill（不会影响 Skills，因为 Skills 用 .skills-pills .pill 更具体） */
+
 .pill{
   padding: 8px 12px;
   border-radius: 999px;
@@ -360,11 +360,11 @@ body{
   line-height: 1.7;
 }
 
-/* ✅ Project tech tags = rose red theme */
+/* Project tech tags = rose red theme */
 .card-tags {
   display: flex;
-  flex-wrap: wrap;        /* ⭐ 允许自动换行 */
-  gap: 8px 10px;          /* ⭐ 行间距 + 列间距 */
+  flex-wrap: wrap;        
+  gap: 8px 10px;         
   margin-top: 10px;
 }
 
@@ -372,11 +372,11 @@ body{
   font-size: 12px;
   font-weight: 600;
   max-width: 90%;
-  color: var(--accent);                 /* 文字变红 */
-  border: 1px solid rgba(155, 58, 87, 0.45); /* 红色描边 */
+  color: var(--accent);                
+  border: 1px solid rgba(155, 58, 87, 0.45);
   padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(155, 58, 87, 0.08);  /* 微红底，更协调 */
+  background: rgba(155, 58, 87, 0.08);  
 }
 
 .card-tags span:hover{
@@ -416,12 +416,12 @@ body{
   font-weight: 500;
 }
 
-/* 电话玫瑰红 */
+
 .contact-item .phone{
   color: var(--accent);
 }
 
-/* 邮箱保持中性（或你也可以同色） */
+
 .contact-item .email{
   color: rgba(255,255,255,0.85);
   text-decoration: none;
